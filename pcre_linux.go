@@ -54,8 +54,10 @@
 package pcre2
 
 /*
-#cgo pkg-config: libpcre2-8
+#cgo CFLAGS: -I${SRCDIR}/linux/include
+#cgo LDFLAGS: -L${SRCDIR}/linux/lib -lpcre2-8
 #define PCRE2_CODE_UNIT_WIDTH 8
+#define PCRE2_STATIC
 
 #include <pcre2.h>
 #include <string.h>
