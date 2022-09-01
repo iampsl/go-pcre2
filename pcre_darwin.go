@@ -62,6 +62,8 @@ package pcre2
 #include <pcre2.h>
 #include <string.h>
 
+PCRE2_SIZE PCRE2_UNSET_NEW = PCRE2_UNSET;
+
 #define MY_PCRE2_ERROR_MESSAGE_BUF_LEN 256
 static void * MY_pcre2_get_error_message(int errnum) {
 	PCRE2_UCHAR *buf = (PCRE2_UCHAR *) malloc(sizeof(PCRE2_UCHAR) * MY_PCRE2_ERROR_MESSAGE_BUF_LEN);
@@ -472,7 +474,7 @@ const (
 	ZERO_TERMINATED = C.PCRE2_ZERO_TERMINATED
 )
 
-var UNSET C.PCRE2_SIZE = C.PCRE2_UNSET
+var UNSET C.PCRE2_SIZE = C.PCRE2_UNSET_NEW
 
 // Constants used to determine the right size of the matchData structure
 var (
